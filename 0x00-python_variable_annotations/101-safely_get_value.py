@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """safely_get_value function def"""
 from typing import Mapping, Any, Union, TypeVar, Optional
 
