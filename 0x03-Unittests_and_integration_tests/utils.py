@@ -78,3 +78,4 @@ def memoize(fn: Callable) -> Callable:
 print(access_nested_map({"a": {"b": 2}}, "a"))
 print(access_nested_map({"a": {"b": {"c": 4}}}, ("a", "b", "c")))
 print(access_nested_map({"a": {"b": {"c": 4}}}, ("a",)))
+# print(access_nested_map({"a": {"b": {"c": 4}}}, ("d",)))
