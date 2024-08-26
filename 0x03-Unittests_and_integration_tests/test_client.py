@@ -9,14 +9,18 @@ from utils import get_json
 
 
 class TestGithubOrgClient(unittest.TestCase):
-    """Test Github Org Client class"""
+    """
+    Test Github Org Client class
+    """
     @parameterized.expand([
       ("google"),
       ("abc"),
     ])
     @patch('client.get_json', return_value={"payload": True})
     def test_org(self, org, mock_org):
-        """Test org Test function"""
+        """
+        Test TestGithubOrgClient's org method
+        """
         ex = GithubOrgClient(org)
         ex_response = ex.org
         self.assertEqual(ex_response, mock_org.return_value)
