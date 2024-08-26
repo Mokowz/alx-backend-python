@@ -74,9 +74,21 @@ def memoize(fn: Callable) -> Callable:
 
     return property(memoized)
 
+class Mat:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
 
+    @memoize
+    def add(self):
+        print("Addddd")
+        return self.a + self.b
 # print(access_nested_map({"a": {"b": 2}}, "a"))
 # print(access_nested_map({"a": {"b": {"c": 4}}}, ("a", "b", "c")))
 # print(access_nested_map({"a": {"b": {"c": 4}}}, ("a",)))
 # print(access_nested_map({"a": {"b": {"c": 4}}}, ("d",)))
-print(get_json("https://docs.python.org/3/library/unittest.html"))
+# print(get_json("https://docs.python.org/3/library/unittest.html"))
+matho = Mat(32, 8)
+# matho.add()
+print(matho.add, '\n')
+print(matho.add)
