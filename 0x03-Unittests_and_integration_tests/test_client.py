@@ -9,19 +9,19 @@ from utils import get_json
 
 
 class TestGithubOrgClient(unittest.TestCase):
-  """Test Github Org Client class"""
-  @parameterized.expand([
-    ("google"),
-    ("abc"),
-  ])
-  @patch('client.get_json', return_value={"payload": True})
-  def test_org(self, org, mock_org):
-    "Test org function"
-    ex = GithubOrgClient(org)
-    response = ex.org
-    self.assertEqual(response, mock_org.return_value)
-    mock_org.assert_called_once()
+    """Test Github Org Client class"""
+    @parameterized.expand([
+      ("google"),
+      ("abc"),
+    ])
+    @patch('client.get_json', return_value={"payload": True})
+    def test_org(self, org, mock_org):
+        "Test org function"
+        ex = GithubOrgClient(org)
+        response = ex.org
+        self.assertEqual(response, mock_org.return_value)
+        mock_org.assert_called_once()
 
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()
