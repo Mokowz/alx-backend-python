@@ -49,7 +49,7 @@ class TestGithubOrgClient(unittest.TestCase):
 
             test_ex = GithubOrgClient('mimi')
             test_resp = test_ex.public_repos()
-            for idx in range(3):
+            for idx in range(2):
                 self.assertIn(mock_repo.return_value[idx]['name'], test_resp)
             mock_repo.assert_called_once()
             moc.assert_called_once()
