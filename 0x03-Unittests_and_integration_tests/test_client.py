@@ -5,7 +5,7 @@ from unittest import mock
 from unittest.mock import Mock, patch, PropertyMock
 from parameterized import parameterized, parameterized_class
 from client import GithubOrgClient
-from utils import get_json
+from utils import get_json, requests
 from fixtures import TEST_PAYLOAD
 
 
@@ -94,7 +94,7 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         """
         Set up function for TestIntegrationGithubOrgClient
         """
-        cls.get_patcher = patch('utils.requests.get', side_effect=requests_get)
+        cls.get_patcher = patch('requests.get', side_effect=requests_get)
         cls.get_patcher.start()
         cls.client = GithubOrgClient('google')
 
